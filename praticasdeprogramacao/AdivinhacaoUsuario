@@ -1,0 +1,20 @@
+from random import randint
+
+escolhaAleatoria = randint (1,1023)
+
+print ('Olá, esse é um jogo de adivinhação! Tente adivinhar o número que eu escolhi entre 1 e 1023.')
+
+acertou = False
+tentativas = 0
+while not acertou:
+    escolhaUsuario = int (input ('Digite o seu palpite: '))
+    tentativas += 1
+    if escolhaUsuario < escolhaAleatoria:
+        print ('O número que eu escolhi é maior.')
+    elif escolhaUsuario > escolhaAleatoria:
+        print ('O número que eu escolhi é menor.')
+    else:
+        acertou = True
+        print ('Parabéns, você acertou com {} tentivas.'.format(tentativas))
+
+print ('Fim de jogo.')
